@@ -56,7 +56,7 @@ export default {
 <style lang="scss" scoped>
 $primary: #409eff;
 $success: #67c23a;
-$info: #17a2b8;
+$info: #909399;
 $warning: #e6a23c;
 $danger: #f56c6c;
 
@@ -177,9 +177,9 @@ $danger: #f56c6c;
 
   &:focus,
   &:hover {
-    background: #f4f4f5;
-    border-color: #d3d4d6;
-    color: #909399;
+    background: #a6a9ad;
+    border-color: #a6a9ad;
+    color: #fff;
   }
 
   &.plain {
