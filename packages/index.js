@@ -7,6 +7,8 @@ import Input from './input/input.vue'
 import Switch from './switch/switch.vue'
 import Form from './form/form.vue'
 import FormItem from './form/form-item.vue'
+import Tab from './tab/tab.vue'
+import TabPanel from './tab/tab-panel.vue'
 
 import './assets/fonts/font.scss'
 
@@ -19,7 +21,9 @@ const components = [
   Input,
   Switch,
   Form,
-  FormItem
+  FormItem,
+  Tab,
+  TabPanel,
 ]
 
 const install = function(Vue) {
