@@ -1,8 +1,26 @@
 import Button from './button/button.vue'
+import Radio from './radio/radio.vue'
+import RadioGroup from './radio/radio-group.vue'
+import Checkbox from './checkbox/checkbox.vue'
+import CheckboxGroup from './checkbox/checkbox-group.vue'
+import Input from './input/input.vue'
+import Switch from './switch/switch.vue'
+import Form from './form/form.vue'
+import FormItem from './form/form-item.vue'
 
 import './assets/fonts/font.scss'
 
-const components = [Button]
+const components = [
+  Button,
+  Radio,
+  RadioGroup,
+  Checkbox,
+  CheckboxGroup,
+  Input,
+  Switch,
+  Form,
+  FormItem
+]
 
 const install = function(Vue) {
   components.forEach((item) => {

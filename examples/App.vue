@@ -1,50 +1,39 @@
 <template>
   <div id="app">
     <div class="wrap">
-      <div class="row">
-        <len-button @click="fn">默认按钮</len-button>
-        <len-button type="primary">主要按钮</len-button>
-        <len-button type="success">成功按钮</len-button>
-        <len-button type="info">信息按钮</len-button>
-        <len-button type="warning">警告按钮</len-button>
-        <len-button type="danger">危险按钮</len-button>
-      </div>
-
-      <div class="row">
-        <len-button>默认按钮</len-button>
-        <len-button plain type="primary">主要按钮</len-button>
-        <len-button plain type="success">成功按钮</len-button>
-        <len-button plain type="info">信息按钮</len-button>
-        <len-button plain type="warning">警告按钮</len-button>
-        <len-button plain type="danger">危险按钮</len-button>
-      </div>
-
-      <div class="row">
-        <len-button>默认按钮</len-button>
-        <len-button round type="primary">主要按钮</len-button>
-        <len-button round type="success">成功按钮</len-button>
-        <len-button round type="info">信息按钮</len-button>
-        <len-button round type="warning">警告按钮</len-button>
-        <len-button round type="danger">危险按钮</len-button>
-      </div>
-
-      <div class="row">
-        <len-button icon="len-icon-search" circle></len-button>
-        <len-button icon="len-icon-edit" circle type="primary"></len-button>
-        <len-button icon="len-icon-check" circle type="success"></len-button>
-        <len-button icon="len-icon-message" circle type="info"></len-button>
-        <len-button icon="len-icon-star-off" circle type="warning"></len-button>
-        <len-button icon="len-icon-delete" circle type="danger"></len-button>
-      </div>
-
-      <div class="row">
-        <len-button @click="fn" disabled>默认按钮</len-button>
-        <len-button disabled type="primary">主要按钮</len-button>
-        <len-button disabled type="success">成功按钮</len-button>
-        <len-button disabled type="info">信息按钮</len-button>
-        <len-button disabled type="warning">警告按钮</len-button>
-        <len-button disabled type="danger">危险按钮</len-button>
-      </div>
+      <len-form :model="model" label-width="80px">
+        <len-form-item label="用户名">
+          <len-input
+            placeholder="请输入用户名"
+            v-model="model.username"
+            clearable
+          ></len-input>
+        </len-form-item>
+        <len-form-item label="密码">
+          <len-input
+            type="password"
+            placeholder="请输入密码"
+            v-model="model.password"
+            show-password
+          ></len-input>
+        </len-form-item>
+        <len-form-item label="性别">
+          <len-radio-group v-model="model.gender">
+            <len-radio label="1">男</len-radio>
+            <len-radio label="0">女</len-radio>
+          </len-radio-group>
+        </len-form-item>
+        <len-form-item>
+          <len-checkbox-group v-model="model.items">
+            <len-checkbox label="选项一"></len-checkbox>
+            <len-checkbox label="选项二"></len-checkbox>
+            <len-checkbox label="选项三"></len-checkbox>
+          </len-checkbox-group>
+        </len-form-item>
+        <len-form-item label="开关">
+          <len-switch v-model="model.active"></len-switch>
+        </len-form-item>
+      </len-form>
     </div>
   </div>
 </template>
@@ -52,11 +41,15 @@
 <script>
 export default {
   name: 'App',
-  methods: {
-    fn(e) {
-      console.log(e)
-      console.log('Hello Len-UI')
-    },
+  data() {
+    return {
+      model: {
+        username: 'admin',
+        password: '123456',
+        gender: '1',
+        items: ['选项一', '选项二', '选项三'],
+      },
+    }
   },
 }
 </script>
