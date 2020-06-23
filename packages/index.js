@@ -11,6 +11,8 @@ import Tab from './tab/tab.vue'
 import TabPanel from './tab/tab-panel.vue'
 import Tooltip from './tooltip/tooltip.vue'
 import Dialog from './dialog/dialog.vue'
+import Collapse from './collapse/collapse.vue'
+import CollapseItem from './collapse/collapse-item.vue'
 
 import './assets/fonts/font.scss'
 
@@ -28,6 +30,8 @@ const components = [
   TabPanel,
   Tooltip,
   Dialog,
+  Collapse,
+  CollapseItem,
 ]
 
 const install = function(Vue) {
