@@ -1,18 +1,19 @@
 <template>
   <div id="app">
     <div class="wrap">
-      <len-tooltip content="提示文字" placement="left">
-        <len-button>左 - left</len-button>
-      </len-tooltip>
-      <len-tooltip content="提示文字" placement="top">
-        <len-button>上 - top</len-button>
-      </len-tooltip>
-      <len-tooltip content="提示文字" placement="bottom">
-        <len-button>下 - bottom</len-button>
-      </len-tooltip>
-      <len-tooltip content="提示文字" placement="right">
-        <len-button>右 - right</len-button>
-      </len-tooltip>
+      <len-dialog width="60%" top="200px" :visible="visible" @click="close">
+        <ul>
+          <li>你好，我是Len-UI</li>
+          <li>我还很年轻，期待你的帮助</li>
+          <li>感兴趣的话加入到Len-UI的创造中吧</li>
+        </ul>
+        <template v-slot:footer>
+          <len-button type="primary" @click="visible = false">确定</len-button>
+          <len-button @click="visible = false">取消</len-button>
+        </template>
+      </len-dialog>
+
+      <len-button type="primary" @click="visible = true">Dialog</len-button>
     </div>
   </div>
 </template>
@@ -20,18 +21,25 @@
 <script>
 export default {
   name: 'App',
+  data() {
+    return {
+      visible: false,
+    }
+  },
+  methods: {
+    close(value) {
+      this.visible = value
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 .wrap {
   width: 750px;
+  margin: 0 auto;
   border: 2px solid #eee;
   border-radius: 12px;
   padding: 12px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%)
 }
 </style>
