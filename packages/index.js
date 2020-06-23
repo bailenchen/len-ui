@@ -9,6 +9,7 @@ import Form from './form/form.vue'
 import FormItem from './form/form-item.vue'
 import Tab from './tab/tab.vue'
 import TabPanel from './tab/tab-panel.vue'
+import Tooltip from './tooltip/tooltip.vue'
 
 import './assets/fonts/font.scss'
 
@@ -24,6 +25,7 @@ const components = [
   FormItem,
   Tab,
   TabPanel,
+  Tooltip,
 ]
 
 const install = function(Vue) {
